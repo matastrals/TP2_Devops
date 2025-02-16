@@ -1,27 +1,13 @@
-# <p align="center">TP - WIK-DPS-TP01</p>
+# <p align="center">TP - WIK-DPS-TP02</p>
 
 ## Configuration 
 
-Pour lancer le projet il faut que vous fassiez les commandes suivantes à la racine du projet :
-
-- npm install
-- npx tsc
-- node .\build\index.js 
-
-Vous pouvez également changer le port d'écoute (par défault 3000) en éxécutant la commande :
-
-*(Windows CMD)* - ```set PING_LISTEN_PORT={port_choisis}```
-
-*(Windows Powershell)* - ```$env:PING_LISTEN_PORT={port_choisis}```
-
-*(Linux)* - ```export PING_LISTEN_PORT={port_choisis}```
+Pour lancer le projet il faut que vous ayez docker d'installé.
+Après avoir récupérer le repo, placez vous à la racine puis lancez la commande :
+- ```docker build -t api-single .``` puis ```docker run -p 3000:3000 api-single```
+ou
+- ```docker build -f Dockerfile2 -t api-multi .``` puis ```docker run -p 3000:3000 api-multi```
 
 Vous avez maintenant un serveur web qui tourne et que vous pouvez accéder à [http://localhost:3000](http://localhost:3000)
 
-## Qu'est ce ?
 
-C'est un petit server web développer en TypeScript.
-Le serveur tourne en local et peut renvoyer 2 status au client : 
-
-- Si la requète est sur http://localhost:{port_choisis}/ping et en méthode GET alors il renvoit les headers de la requète en format json
-- Sinon il renvoit un statut 404 vide.
